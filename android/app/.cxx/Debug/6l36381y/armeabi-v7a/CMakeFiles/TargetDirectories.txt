@@ -1,0 +1,2 @@
+/Users/livialima/Documents/runmate_app/android/app/.cxx/Debug/6l36381y/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/livialima/Documents/runmate_app/android/app/.cxx/Debug/6l36381y/armeabi-v7a/CMakeFiles/rebuild_cache.dir

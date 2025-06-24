@@ -1,0 +1,2 @@
+/Users/liviapuc/Documents/pmg-es-2025-1-ti5-runmate/code/runmate_app/android/app/.cxx/Debug/1w464v2g/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/liviapuc/Documents/pmg-es-2025-1-ti5-runmate/code/runmate_app/android/app/.cxx/Debug/1w464v2g/arm64-v8a/CMakeFiles/rebuild_cache.dir

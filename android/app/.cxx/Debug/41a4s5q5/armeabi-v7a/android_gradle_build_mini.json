@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/Users/liviapuc/Documents/dev/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/liviapuc/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/liviapuc/Documents/pmg-es-2025-1-ti5-runmate/code/runmate_app/android/app/.cxx/Debug/41a4s5q5/armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/liviapuc/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/liviapuc/Documents/pmg-es-2025-1-ti5-runmate/code/runmate_app/android/app/.cxx/Debug/41a4s5q5/armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}
