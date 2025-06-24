@@ -14,4 +14,5 @@ class Paths {
   static const String friendsPage = "/friendsPage";
   static const String userProfile = "/userProfile";
   static const String post = "/post";
+  static const String landingPage= "/landingPage";
 }

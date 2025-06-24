@@ -54,7 +54,7 @@ void main() async {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: const [Locale('pt')],
-          initialRoute: isLoggedIn ? Paths.menuPage : Paths.loginPage,
+          initialRoute: GetPlatform.isWeb ? Paths.landingPage : Paths.loginPage,
         );
       },
     ),

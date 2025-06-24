@@ -17,6 +17,7 @@ import 'package:runmate_app/presentation/challenges/challenges_page.dart';
 import 'package:runmate_app/presentation/chat/chat_page.dart';
 import 'package:runmate_app/presentation/friends/friends_page.dart';
 import 'package:runmate_app/presentation/goals/new_goal_page.dart';
+import 'package:runmate_app/presentation/landing_page.dart';
 import 'package:runmate_app/presentation/menu/menu_page.dart';
 import 'package:runmate_app/presentation/login/login_page.dart';
 import 'package:runmate_app/presentation/new_challenge/new_challenge_page.dart';
@@ -82,6 +83,10 @@ class Routes {
       name: Paths.post,
       page: () => const PostPage(),
       binding: PostModule(),
+    ),
+    GetPage(
+      name: Paths.landingPage,
+      page: () => const LandingPage(),
     ),
   ];
 }

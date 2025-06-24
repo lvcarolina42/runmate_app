@@ -20,7 +20,7 @@ abstract class MenuPageControllerStore extends DisposableInterface with Store {
   @action
   void onChangePage(int index) {
     _currentIndex = index;
-    if (index == 2) {
+    if (!GetPlatform.isWeb && index == 2) {
       Get.toNamed(Paths.runningMonitor);
       return;
     }

@@ -162,13 +162,14 @@ class _MenuPageState extends State<MenuPage> {
             padding: EdgeInsets.symmetric(horizontal: isWeb ? 480 : 0),
             child: const EventsPage(),
           ),
-          const Center(
-            child: Text(
-              'Configurações',
-              style: TextStyle(
-                  color: Colors.white, fontFamily: AppFonts.poppinsMedium),
+          if (!isWeb)
+            const Center(
+              child: Text(
+                'Configurações',
+                style: TextStyle(
+                    color: Colors.white, fontFamily: AppFonts.poppinsMedium),
+              ),
             ),
-          ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: isWeb ? 480 : 0),
             child: const WeatherInformationPage(),
@@ -190,21 +191,22 @@ class _MenuPageState extends State<MenuPage> {
             icon: Icon(Icons.event),
             label: '',
           ),
-          BottomNavigationBarItem(
-            icon: Container(
-              padding: const EdgeInsets.all(12.0),
-              decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppColors.blue900,
-                    ),
-              child: const Icon(
-                Icons.directions_run,
-                size: 36,
-                color: Colors.white,
+          if (!isWeb)
+            BottomNavigationBarItem(
+              icon: Container(
+                padding: const EdgeInsets.all(12.0),
+                decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppColors.blue900,
+                      ),
+                child: const Icon(
+                  Icons.directions_run,
+                  size: 36,
+                  color: Colors.white,
+                ),
               ),
+              label: '',
             ),
-            label: '',
-          ),
           const BottomNavigationBarItem(
             icon: Icon(Icons.sunny),
             label: '',
