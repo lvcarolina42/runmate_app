@@ -19,9 +19,9 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  if (GetPlatform.isAndroid) await Firebase.initializeApp();
+  if (GetPlatform.isAndroid && !GetPlatform.isWeb) await Firebase.initializeApp();
 
-  if (GetPlatform.isAndroid) FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  if (GetPlatform.isAndroid && !GetPlatform.isWeb) FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
   DependencyInjector().setup();
 

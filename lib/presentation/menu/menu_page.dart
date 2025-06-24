@@ -28,7 +28,7 @@ class _MenuPageState extends State<MenuPage> {
 
   @override
   Widget build(BuildContext context) {
-    final isWeb = GetPlatform.isWeb;
+    final isWeb = MediaQuery.of(context).size.width > 800;
     return Scaffold(
       backgroundColor: AppColors.blue950,
       appBar: AppBar(
@@ -162,7 +162,7 @@ class _MenuPageState extends State<MenuPage> {
             padding: EdgeInsets.symmetric(horizontal: isWeb ? 480 : 0),
             child: const EventsPage(),
           ),
-          if (!isWeb)
+          if (!isWeb && !GetPlatform.isWeb)
             const Center(
               child: Text(
                 'Configurações',
@@ -191,7 +191,7 @@ class _MenuPageState extends State<MenuPage> {
             icon: Icon(Icons.event),
             label: '',
           ),
-          if (!isWeb)
+          if (!isWeb && !GetPlatform.isWeb)
             BottomNavigationBarItem(
               icon: Container(
                 padding: const EdgeInsets.all(12.0),

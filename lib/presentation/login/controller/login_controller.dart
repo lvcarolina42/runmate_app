@@ -49,7 +49,7 @@ abstract class LoginControllerStore extends DisposableInterface with Store {
     final user = SessionManager().currentUser;
     if (user != null) {
       Get.offAllNamed(Paths.menuPage);
-      if (GetPlatform.isAndroid) await updateTokenUseCase(userId: user.id);
+      if (GetPlatform.isAndroid && !GetPlatform.isWeb) await updateTokenUseCase(userId: user.id);
     }
   }
 
@@ -64,7 +64,7 @@ abstract class LoginControllerStore extends DisposableInterface with Store {
     result.processResult(
       onSuccess: (data) async {
         await SessionManager().saveUser(data);
-        if (GetPlatform.isAndroid) await updateTokenUseCase(userId: data.id);
+        if (GetPlatform.isAndroid && !GetPlatform.isWeb) await updateTokenUseCase(userId: data.id);
         Get.offAllNamed(Paths.menuPage);
       },
       onFailure: (error) {

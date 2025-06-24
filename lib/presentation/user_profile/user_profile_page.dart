@@ -52,7 +52,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
           }
 
           return ListView(
-            padding: EdgeInsets.symmetric(horizontal: GetPlatform.isWeb ? 480 : 0),
+            padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width > 800 ? 480 : 0),
             children: [
               const SizedBox(height: 16),
               _buildHeader(user: user),

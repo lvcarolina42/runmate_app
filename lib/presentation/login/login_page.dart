@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Observer(
       builder: (context) {
-        final isWeb = GetPlatform.isWeb;
+        final isWeb = MediaQuery.of(context).size.width > 800;
         return Scaffold(
           backgroundColor: AppColors.blue950,
           body: SafeArea(

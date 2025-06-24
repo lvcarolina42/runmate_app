@@ -63,7 +63,7 @@ class _ChallengePageState extends State<ChallengePage> {
 
   @override
   Widget build(BuildContext context) {
-    final isWeb = GetPlatform.isWeb;
+    final isWeb = MediaQuery.of(context).size.width > 800;
     return Observer(
       builder: (context) {
         final challenge = _challengeController.challenge;

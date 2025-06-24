@@ -37,7 +37,7 @@ class _ChallengesPageState extends State<ChallengesPage>
 
   @override
   Widget build(BuildContext context) {
-    final isWeb = GetPlatform.isWeb;
+    final isWeb = MediaQuery.of(context).size.width > 800;
     return Scaffold(
       backgroundColor: AppColors.blue950,
       appBar: AppBar(
@@ -77,7 +77,7 @@ class _ChallengesPageState extends State<ChallengesPage>
       body: Observer(
         builder: (context) {
           return Padding(
-            padding: EdgeInsets.symmetric(horizontal: isWeb ? 480 : 16),
+            padding: EdgeInsets.symmetric(horizontal: isWeb ? 480 : 8),
             child: TabBarView(
               controller: _tabController,
               children: [

@@ -36,7 +36,7 @@ class _RegisterPageState extends State<RegisterPage> {
         ),
         body: SafeArea(
           child: SingleChildScrollView(
-            padding: EdgeInsets.symmetric(horizontal: GetPlatform.isWeb ? 480 : 24, vertical: 48),
+            padding: EdgeInsets.symmetric(horizontal: (MediaQuery.of(context).size.width > 800) ? 480 : 24, vertical: 48),
             child: Center(
               child: IntrinsicHeight(
                 child: Form(

@@ -36,7 +36,7 @@ class _FriendsPageState extends State<FriendsPage>
 
   @override
   Widget build(BuildContext context) {
-    final isWeb = GetPlatform.isWeb;
+    final isWeb = MediaQuery.of(context).size.width > 800;
     return Scaffold(
       backgroundColor: AppColors.blue950,
       appBar: AppBar(
