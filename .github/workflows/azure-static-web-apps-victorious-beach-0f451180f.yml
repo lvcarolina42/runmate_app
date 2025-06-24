@@ -1,0 +1,61 @@
+name: Azure Static Web Apps CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      # 1. Baixa o código do seu repositório
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      # 2. Instala o Flutter no ambiente de build
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.29.3'
+
+      # 3. Baixa as dependências do Flutter
+      - name: Get Flutter dependencies
+        run: flutter pub get
+
+      # 4. Compila o projeto Flutter para a web
+      - name: Build Flutter web app
+        run: flutter build web
+
+      # 5. Faz o deploy para o Azure Static Web Apps
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_BEACH_0F451180F }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          ###### INÍCIO DAS MUDANÇAS IMPORTANTES ######
+          app_location: "build/web" # Aponta para a pasta com os arquivos já compilados
+          api_location: ""           # Permanece vazio se não tiver API
+          output_location: ""        # Deixe vazio, pois o build já foi feito nos passos anteriores
+          ###### FIM DAS MUDANÇAS IMPORTANTES ######
+
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_BEACH_0F451180F }}
+          action: "close"
